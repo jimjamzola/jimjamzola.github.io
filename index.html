@@ -1,9 +1,94 @@
 <!DOCTYPE html>
-<html>
-  <body>
-    <h1>My Workshop</h1>
-    <p>Date: TBD</p>
-    <p>Location: TBD</p>
-    <p>Welcome to my workshop website!</p>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>My Workshop</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">My Workshop</div>
+      <nav class="nav">
+        <a href="#home">Home</a>
+        <a href="#schedule">Schedule</a>
+        <a href="#speakers">Speakers</a>
+        <a href="#register" class="cta">Register</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <!-- mobile menu toggle (works with CSS only) -->
+      <input id="nav-toggle" type="checkbox" />
+      <label for="nav-toggle" class="nav-toggle-label" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </label>
+    </div>
+  </header>
+
+  <!-- PAGE CONTENT -->
+  <main>
+    <section id="home" class="hero container">
+      <h1>My Workshop</h1>
+      <p class="lead">Short subtitle or quick one-line description of the workshop.</p>
+    </section>
+
+    <section id="schedule" class="container card">
+      <h2>Schedule</h2>
+      <ul>
+        <li><strong>9:00</strong> — Welcome + overview</li>
+        <li><strong>9:30</strong> — Session 1</li>
+        <li><strong>10:30</strong> — Break</li>
+        <li><strong>10:45</strong> — Session 2</li>
+        <li><strong>12:00</strong> — Lunch</li>
+      </ul>
+    </section>
+
+    <section id="speakers" class="container card">
+      <h2>Speakers</h2>
+      <div class="speakers-grid">
+        <div class="speaker">
+          <div class="speaker-name">Dr. Example</div>
+          <div class="speaker-bio">Short bio or affiliation. Keep it one short sentence.</div>
+        </div>
+        <div class="speaker">
+          <div class="speaker-name">Prof. Sample</div>
+          <div class="speaker-bio">Short bio or affiliation.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="register" class="container card">
+      <h2>Register</h2>
+      <p>If you want, link a Google Form or Eventbrite here. Example button below:</p>
+      <p><a class="big-button" href="https://forms.gle/" target="_blank" rel="noopener">Register Now</a></p>
+    </section>
+
+    <section id="contact" class="container card">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:you@example.com">you@example.com</a></p>
+      <p>Questions or accessibility needs? Say so here.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">© <span id="year"></span> My Workshop · Built with GitHub Pages</div>
+  </footer>
+
+<script>
+  // show current year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // close mobile menu on anchor click (small helper)
+  document.querySelectorAll('nav a').forEach(a=>{
+    a.addEventListener('click', ()=> {
+      const cb = document.getElementById('nav-toggle');
+      if(cb) cb.checked = false;
+    });
+  });
+</script>
+
+</body>
 </html>
