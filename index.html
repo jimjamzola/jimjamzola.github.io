@@ -3,24 +3,34 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>My Workshop</title>
+  <title>ASCEND Convening — ASU</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* small additional page-specific tweaks */
+    html { scroll-behavior: smooth; } /* smooth scrolling for nav */
+    .schedule-grid { display:grid; grid-template-columns: 1fr 220px 1fr; gap:12px; align-items:start; }
+    .schedule-time { font-weight:700; text-align:right; padding-right:10px; }
+    .schedule-item{ padding-left:12px; }
+    .note { color: #555; font-size:0.95rem; margin-top:6px; }
+    .sponsor-row { display:flex; gap:12px; align-items:center; flex-wrap:wrap; margin-top:12px; }
+    .sponsor { padding:8px 12px; border-radius:6px; background:#f8fafc; border:1px solid #eef2f6; font-weight:600;}
+  </style>
 </head>
 <body>
 
   <!-- NAV -->
   <header class="site-header">
     <div class="container header-inner">
-      <div class="brand">My Workshop</div>
+      <div class="brand">ASCEND Convening — ASU</div>
       <nav class="nav">
         <a href="#home">Home</a>
         <a href="#schedule">Schedule</a>
         <a href="#speakers">Speakers</a>
+        <a href="#logistics">Logistics</a>
         <a href="#register" class="cta">Register</a>
         <a href="#contact">Contact</a>
       </nav>
 
-      <!-- mobile menu toggle (works with CSS only) -->
       <input id="nav-toggle" type="checkbox" />
       <label for="nav-toggle" class="nav-toggle-label" aria-hidden="true">
         <span></span><span></span><span></span>
@@ -28,67 +38,154 @@
     </div>
   </header>
 
-  <!-- PAGE CONTENT -->
   <main>
+    <!-- HOME / HERO -->
     <section id="home" class="hero container">
-      <h1>My Workshop</h1>
-      <p class="lead">Short subtitle or quick one-line description of the workshop.</p>
-    </section>
+      <h1>ASCEND Convening</h1>
+      <p class="lead">A small, focused gathering of ASCEND fellows and invited mentors to write, plan, and build next steps. Arizona State University (Tempe campus).</p>
 
-    <section id="schedule" class="container card">
-      <h2>Schedule</h2>
-      <ul>
-        <li><strong>9:00</strong> — Welcome + overview</li>
-        <li><strong>9:30</strong> — Session 1</li>
-        <li><strong>10:30</strong> — Break</li>
-        <li><strong>10:45</strong> — Session 2</li>
-        <li><strong>12:00</strong> — Lunch</li>
-      </ul>
-    </section>
+      <div class="card note">
+        <strong>Dates & basic flow</strong>: single-day convening with morning talks, writing workshops, and afternoon report-out. Exact room assignments and final logistics will be emailed to registered attendees.
+      </div>
 
-    <section id="speakers" class="container card">
-      <h2>Speakers</h2>
-      <div class="speakers-grid">
-        <div class="speaker">
-          <div class="speaker-name">Dr. Example</div>
-          <div class="speaker-bio">Short bio or affiliation. Keep it one short sentence.</div>
-        </div>
-        <div class="speaker">
-          <div class="speaker-name">Prof. Sample</div>
-          <div class="speaker-bio">Short bio or affiliation.</div>
-        </div>
+      <div class="sponsor-row">
+        <div class="sponsor">Supported by: Alliance of Hispanic Serving Research Universities</div>
+        <div class="sponsor">Generous support from: The Luce Foundation</div>
       </div>
     </section>
 
-    <section id="register" class="container card">
-      <h2>Register</h2>
-      <p>If you want, link a Google Form or Eventbrite here. Example button below:</p>
-      <p><a class="big-button" href="https://forms.gle/" target="_blank" rel="noopener">Register Now</a></p>
+    <!-- SCHEDULE (updated from user screenshot) -->
+    <section id="schedule" class="container card">
+      <h2>Schedule (day of convening)</h2>
+
+      <div class="schedule-grid">
+        <div class="schedule-item"><strong>Check in and Breakfast</strong></div>
+        <div class="schedule-time">8:30 — 9:00 am</div>
+        <div class="schedule-item">Sign-in, name tags, light breakfast (coffee available).</div>
+
+        <div class="schedule-item"><strong>Intro / Welcome</strong></div>
+        <div class="schedule-time">9:00 am</div>
+        <div class="schedule-item">Opening remarks and goals for the day.</div>
+
+        <div class="schedule-item"><strong>Keynote Talk — Vanessa Sanchez</strong></div>
+        <div class="schedule-time">9:15 — 9:45 am</div>
+        <div class="schedule-item">From fellowship to faculty: lessons and practical tips.</div>
+
+        <div class="schedule-item"><strong>Panel — Leadership Pathways & Science Policy</strong></div>
+        <div class="schedule-time">9:45 — 10:30 am</div>
+        <div class="schedule-item">Panel discussion with ASCEND alumni, faculty, and policy advocates.</div>
+
+        <div class="schedule-item"><strong>Morning Break</strong></div>
+        <div class="schedule-time">10:30 — 11:00 am</div>
+        <div class="schedule-item">Informal networking and refreshments.</div>
+
+        <div class="schedule-item"><strong>Guided Writing</strong></div>
+        <div class="schedule-time">11:00 — 12:15 pm</div>
+        <div class="schedule-item">Breakout pods (3–5 people) for policy/impact statements and proposal outlines.</div>
+
+        <div class="schedule-item"><strong>Lunch</strong></div>
+        <div class="schedule-time">12:15 — 1:30 pm</div>
+        <div class="schedule-item">Catered lunch (planning note: ~45 people). Posters/quick chat during lunch.</div>
+
+        <div class="schedule-item"><strong>Guided Writing / Brainstorming</strong></div>
+        <div class="schedule-time">1:30 — 2:30 pm</div>
+        <div class="schedule-item">Proposal strategy and seed-grant next steps.</div>
+
+        <div class="schedule-item"><strong>Writing Block</strong></div>
+        <div class="schedule-time">2:30 — 3:30 pm</div>
+        <div class="schedule-item">Quiet writing time with templates and prompts.</div>
+
+        <div class="schedule-item"><strong>Break</strong></div>
+        <div class="schedule-time">3:30 — 3:45 pm</div>
+        <div class="schedule-item">Coffee & snacks.</div>
+
+        <div class="schedule-item"><strong>Writing Block & Report Out</strong></div>
+        <div class="schedule-time">3:45 — 4:45 pm</div>
+        <div class="schedule-item">Group summaries, share near-final drafts, agree next steps.</div>
+
+        <div class="schedule-item"><strong>Closing Remarks</strong></div>
+        <div class="schedule-time">4:45 — 5:00 pm</div>
+        <div class="schedule-item">Confirm mailing list, shared drive, and action items.</div>
+
+        <div class="schedule-item"><strong>Dinner (optional)</strong></div>
+        <div class="schedule-time">5:30 pm</div>
+        <div class="schedule-item">Informal dinner at Novus Place / Blanca's (local reservation for ~40 people).</div>
+      </div>
+
+      <p class="note">This schedule and timing reflect the final plan for the convening. For more background about the workshop goals and deliverables see the project brief (proposal materials used to request seed support). :contentReference[oaicite:1]{index=1}</p>
     </section>
 
-    <section id="contact" class="container card">
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:you@example.com">you@example.com</a></p>
-      <p>Questions or accessibility needs? Say so here.</p>
+    <!-- SPEAKERS -->
+    <section id="speakers" class="container card">
+      <h2>Speakers & facilitators</h2>
+      <div class="speakers-grid">
+        <div class="speaker">
+          <div class="speaker-name">Dr. Vanessa Sanchez</div>
+          <div class="speaker-bio">ASCEND alumna and keynote speaker. (Keynote: transitioning from fellowship to faculty.)</div>
+        </div>
+        <div class="speaker">
+          <div class="speaker-name">Panel & invited mentors</div>
+          <div class="speaker-bio">ASCEND alumni, ASU faculty, and science policy advocates — details to be announced.</div>
+        </div>
+      </div>
+
+      <p class="note">We will post full bios and affiliation links as speakers confirm. If you are a speaker and need a bio template, email the convening organizers (contact below).</p>
     </section>
+
+    <!-- LOGISTICS -->
+    <section id="logistics" class="container card">
+      <h2>Logistics & campus info</h2>
+
+      <ul>
+        <li><strong>Venue:</strong> Arizona State University — Tempe campus (exact room TBD; final room posted in the confirmation email).</li>
+        <li><strong>Parking & maps:</strong> ASU parking and campus maps — <a href="https://parking.asu.edu" target="_blank" rel="noopener">ASU Parking</a>, <a href="https://maps.asu.edu" target="_blank" rel="noopener">ASU Campus Maps</a>.</li>
+        <li><strong>Getting to campus:</strong> Plan time for campus security and parking. Public transit and ride-shares are options for many attendees.</li>
+      </ul>
+
+      <h3>Nearby attractions & things to do (optional)</h3>
+      <p>If you are traveling early or staying extra days, here are a few popular places:</p>
+      <ul>
+        <li><a href="https://www.nps.gov/grca/index.htm" target="_blank" rel="noopener">Grand Canyon National Park</a> (day trips available)</li>
+        <li><a href="https://visitsedona.com" target="_blank" rel="noopener">Sedona</a> (scenic drives and hikes)</li>
+        <li><a href="https://phoenixzoo.org" target="_blank" rel="noopener">Phoenix Zoo</a></li>
+        <li><a href="https://www.dbg.org" target="_blank" rel="noopener">Desert Botanical Garden</a></li>
+        <li><a href="https://www.phoenix.gov/parks/arts-culture-sites/points-of-interest/papago-park" target="_blank" rel="noopener">Hole in the Rock (Papago Park)</a></li>
+      </ul>
+    </section>
+
+    <!-- REGISTER -->
+    <section id="register" class="container card">
+      <h2>Register</h2>
+      <p>Please register so we can confirm headcount for catering and room setup. If you already registered via the seed-grant form, you should receive a confirmation email. If not, please use the link below.</p>
+
+      <p><a class="big-button" href="https://forms.gle/" target="_blank" rel="noopener">Register (Google Form)</a></p>
+
+      <p class="note">If you need accessibility accommodations or have dietary restrictions, indicate that on the form or email the organizers directly.</p>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="container card">
+      <h2>Contact & organizers</h2>
+      <p>Email: <a href="mailto:ascend-convening@asu.edu">ascend-convening@asu.edu</a></p>
+      <p>Organizing support is provided by the Simon A. Levin MCMSC at ASU (logistics and campus coordination).</p>
+    </section>
+
   </main>
 
   <footer class="site-footer">
-    <div class="container">© <span id="year"></span> My Workshop · Built with GitHub Pages</div>
+    <div class="container">
+      <div>© <span id="year"></span> ASCEND Convening · Hosted at Arizona State University</div>
+      <div class="note">We gratefully acknowledge the Alliance of Hispanic Serving Research Universities and the Luce Foundation for their generous support.</div>
+    </div>
   </footer>
 
 <script>
-  // show current year
   document.getElementById('year').textContent = new Date().getFullYear();
-
-  // close mobile menu on anchor click (small helper)
   document.querySelectorAll('nav a').forEach(a=>{
-    a.addEventListener('click', ()=> {
-      const cb = document.getElementById('nav-toggle');
-      if(cb) cb.checked = false;
-    });
+    a.addEventListener('click', ()=> { const cb = document.getElementById('nav-toggle'); if(cb) cb.checked = false; });
   });
 </script>
 
 </body>
 </html>
+
