@@ -124,3 +124,14 @@ body{
   .header-inner{ gap:8px; }
   .hero h1{ font-size:36px; }
 }
+
+/* schedule grid and small helpers */
+.schedule-grid{ display:grid; grid-template-columns: 1fr 220px 1fr; gap:12px; align-items:start; }
+.schedule-time{ font-weight:700; text-align:right; padding-right:10px; }
+.schedule-item{ padding-left:12px; }
+.note{ color:#555; font-size:0.95rem; margin-top:6px; }
+.sponsor-row{ display:flex; gap:12px; align-items:center; flex-wrap:wrap; margin-top:12px; }
+.sponsor{ padding:8px 12px; border-radius:6px; background:#f8fafc; border:1px solid #eef2f6; font-weight:600;}
+/* small responsive tweak */
+@media (max-width:900px){ .schedule-grid{ grid-template-columns: 1fr; } .schedule-time{ text-align:left; padding-right:0; } }
+
