@@ -1,0 +1,126 @@
+:root{
+  --bg: #ffffff;
+  --text: #111;
+  --muted: #555;
+  --accent: #2b6cb0;
+  --max: 900px;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.45;
+}
+
+/* container */
+.container{
+  max-width:var(--max);
+  margin:0 auto;
+  padding:28px 20px;
+}
+
+/* header / nav */
+.site-header{
+  position:sticky;
+  top:0;
+  background:white;
+  border-bottom:1px solid #eee;
+  z-index:30;
+}
+.header-inner{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  justify-content:space-between;
+}
+.brand{
+  font-weight:700;
+  font-size:18px;
+  padding:12px 0;
+}
+.nav{
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+.nav a{
+  text-decoration:none;
+  color:var(--muted);
+  padding:8px 10px;
+  border-radius:6px;
+  font-weight:600;
+}
+.nav a:hover{ color:var(--text); background:#f4f8ff; }
+.cta{
+  background:var(--accent);
+  color:white !important;
+  padding:8px 12px;
+  border-radius:8px;
+}
+
+/* hero */
+.hero{
+  padding-top:28px;
+  padding-bottom:12px;
+}
+.hero h1{
+  font-size:48px;
+  margin:4px 0 8px 0;
+  line-height:1;
+}
+.lead{ color:var(--muted); margin:0 0 6px 0; }
+
+/* cards */
+.card{
+  background:#fff;
+  border-radius:8px;
+  padding:18px;
+  margin:16px 0;
+  box-shadow: 0 6px 18px rgba(10,10,10,0.03);
+}
+.speakers-grid{ display:flex; gap:12px; flex-wrap:wrap; }
+.speaker{ flex:1 1 220px; padding:8px; border-left:3px solid #f1f5f9; }
+.speaker-name{ font-weight:700 }
+
+/* big button */
+.big-button{
+  display:inline-block;
+  padding:12px 18px;
+  text-decoration:none;
+  font-weight:700;
+  border-radius:8px;
+  border:1px solid rgba(0,0,0,0.06);
+  background:var(--accent);
+  color:#fff;
+}
+
+/* footer */
+.site-footer{ text-align:center; color:var(--muted); padding:26px 0; font-size:14px; }
+
+/* mobile nav toggle (CSS-only hamburger) */
+#nav-toggle{ display:none; }
+.nav-toggle-label{
+  display:none;
+  width:36px;
+  cursor:pointer;
+  padding:10px;
+}
+.nav-toggle-label span{
+  display:block;
+  height:3px;
+  margin:6px 0;
+  background:#333;
+  border-radius:3px;
+}
+
+/* responsive */
+@media (max-width:720px){
+  .nav{ display:none; position:absolute; right:12px; top:64px; background:white; flex-direction:column; padding:12px; border-radius:8px; box-shadow:0 8px 24px rgba(0,0,0,0.08); }
+  #nav-toggle:checked + .nav-toggle-label + .nav { display:flex; }
+  .nav-toggle-label{ display:block; }
+  .header-inner{ gap:8px; }
+  .hero h1{ font-size:36px; }
+}
